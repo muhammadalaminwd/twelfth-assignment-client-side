@@ -6,7 +6,7 @@ import feedback from '../../src/images/icons/comments-solid.svg'
 
 const BusinessSummary = () => {
     return (
-        <div className='text-center mt-6'>
+        <div className='text-center mt-6 mb-6'>
             <h1 className='text-4xl text-primary mb-2'>Billions Customers Trust us</h1>
             <p className='text-secondary mb-4'>Customer satisfaction is our main priority</p>
 
