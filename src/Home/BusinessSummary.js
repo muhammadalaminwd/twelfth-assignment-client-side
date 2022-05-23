@@ -1,6 +1,6 @@
 import React from 'react';
-import country from '../../src/images/icons/flag-solid.svg'
-import growth from '../../src/images/icons/arrow-up-short-wide-solid.svg'
+import revenue from '../../src/images/icons/revenue.svg'
+import tools from '../../src/images/icons/tools.svg'
 import people from '../../src/images/icons/people-group-solid.svg'
 import feedback from '../../src/images/icons/comments-solid.svg'
 
@@ -15,28 +15,28 @@ const BusinessSummary = () => {
             <div className="card lg:max-w-lg bg-base-100 shadow-xl">
             <figure className="px-5 pt-5">
               <img
-                src={country}
+                src={revenue}
                 alt="flag"
                 className="" width="30px"
               />
             </figure>
             <div className="card-body items-center text-center">
-              <h2 className="card-title text-3xl text-accent">38</h2>
-              <h2 className="card-title text-secondary">Countries </h2>
+              <h2 className="card-title text-3xl text-accent">280M</h2>
+              <h2 className="card-title text-secondary">Annual Revenue</h2>
             </div>
           </div>
 
             <div className="card lg:max-w-lg bg-base-100 shadow-xl">
             <figure className="px-5 pt-5">
               <img
-                src={growth}
+                src={tools}
                 alt="flag"
                 className="" width="30px"
               />
             </figure>
             <div className="card-body items-center text-center">
-              <h2 className="card-title text-3xl text-accent">399+</h2>
-              <h2 className="card-title text text-secondary">Improvement </h2>
+              <h2 className="card-title text-3xl text-accent">75</h2>
+              <h2 className="card-title text text-secondary">Tools</h2>
             </div>
           </div>
 
@@ -50,7 +50,7 @@ const BusinessSummary = () => {
             </figure>
             <div className="card-body items-center text-center">
               <h2 className="card-title text-3xl text-accent">500+</h2>
-              <h2 className="card-title text-secondary">Customers </h2>
+              <h2 className="card-title text-secondary">Customers</h2>
             </div>
           </div>
 
@@ -63,7 +63,7 @@ const BusinessSummary = () => {
               />
             </figure>
             <div className="card-body items-center text-center">
-              <h2 className="card-title text-3xl text-accent">377+</h2>
+              <h2 className="card-title text-3xl text-accent">3K</h2>
               <h2 className="card-title text-secondary">Reviews</h2>
             </div>
           </div>
