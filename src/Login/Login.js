@@ -37,6 +37,8 @@ const Login = () => {
   if (loading || gLoading) {
     return <Loading></Loading>;
   }
+  
+  navigate('/purchase')
 
   if (error || gError) {
     signInError = (
@@ -130,7 +132,7 @@ const Login = () => {
           </form>
           <p className="text-center">
             <small>
-              New to Doctors Portal?{" "}
+              New to Hero Tech?{" "}
               <Link className="text-primary" to="/signup">
                 Create a New Account
               </Link>
