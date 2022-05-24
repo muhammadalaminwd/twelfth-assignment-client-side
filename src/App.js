@@ -10,6 +10,7 @@ import SignUp from './Login/SignUp';
 import RequireAuth from './Login/RequireAuth';
 import NotFound from './NotFound/NotFound';
 import MyPortfolio from './MyPortfolio/MyPortfolio';
+import Dashboard from './Dashboard/Dashboard';
 
 function App() {
   return (
@@ -25,6 +26,10 @@ function App() {
       <Route path='/login' element={<Login />} />
       <Route path='/signup' element={<SignUp />} />
       <Route path='*' element={<NotFound />} />
+
+      <Route path='/dashboard' element={<Dashboard></Dashboard>}>
+      
+      </Route>
       </Routes>
       <Footer></Footer>
     </div>

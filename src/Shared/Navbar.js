@@ -27,11 +27,25 @@ const Navbar = () => {
         <Link to="/review">Review</Link>
       </li>
       <li>
+        <Link to="/purchase">Purchase</Link>
+      </li>
+      <li>
         <Link to="/portfolio">My Portfolio</Link>
       </li>
       <li>
         <Link to="/about">About</Link>
       </li>
+      {
+        user && <li>
+        <Link to="/dashboard">Dashboard</Link>
+        <ul>
+        <li Link to="/myorder">My order</li>
+        <li Link to="/addreview">Add review</li>
+        <li Link to="/myprofile">My Profile</li>
+        
+        </ul>
+      </li>
+      }
       <li>
         {user ? (
           <button className="btn btn-ghost" onClick={logout}>

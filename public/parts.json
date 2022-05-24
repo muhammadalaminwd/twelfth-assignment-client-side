@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Processor",
+        "img": "https://i.ibb.co/2Kc8f6Y/processor.jpg",
+        "description": "This processor is number providing the best service worlwide. You can buy it without any hesitation. We manufactered the product",
+        "minimumOrderQuantity": "6",
+        "availableQuantity": "18",
+        "price": "$300"
+    },
+    {
+        "name": "Hard Disk",
+        "img": "https://i.ibb.co/cy2fg04/harddisk.jpg",
+        "description": "This hard disk is number providing the best service worlwide. You can buy it without any hesitation. We manufactered the product",
+        "minimumOrderQuantity": "10",
+        "availableQuantity": "50",
+        "price": "$150"
+    },
+    {
+        "name": "Graphics Card",
+        "img": "https://i.ibb.co/qDLZ11L/graphicscard.jpg",
+        "description": "This Graphics Card is number providing the best service worlwide. You can buy it without any hesitation. We manufactered the product",
+        "minimumOrderQuantity": "20",
+        "availableQuantity": "80",
+        "price": "$90"
+    }
+
+]

@@ -1,39 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Part from './Part';
-import processor from '../../src/images/parts/processor.jpg'
-import harddisk from '../../src/images/parts/harddisk.jpg'
-import graphicscard from '../../src/images/parts/graphicscard.jpg'
+import { useNavigate } from 'react-router-dom';
 
 const Parts = () => {
-    const parts = [
-        {
-            _id: 1,
-            name: 'Processor',
-            img: processor,
-            description: 'This processor is number providing the best service worlwide. You can buy it without any hesitation. We manufactered the product',
-            minimumOrderQuantity: '6',
-            availableQuantity: '18',
-            price: '$300'
-        },
-        {
-            _id: 2,
-            name: 'Hard Disk',
-            img: harddisk,
-            description: 'This hard disk is number providing the best service worlwide. You can buy it without any hesitation. We manufactered the product',
-            minimumOrderQuantity: '10',
-            availableQuantity: '50',
-            price: '$150'
-        },
-        {
-            _id: 2,
-            name: 'Graphics Card',
-            img: graphicscard,
-            description: 'This graphics card is number providing the best service worlwide. You can buy it without any hesitation. We manufactered the product',
-            minimumOrderQuantity: '20',
-            availableQuantity: '80',
-            price: '$90'
-        }
-    ]
+
+  const [parts, setParts] = useState([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    fetch("https://enigmatic-sierra-69090.herokuapp.com/parts")
+      .then((res) => res.json())
+      .then((data) => setParts(data));
+  }, []);
+
+
     return (
         <div>
         <div className="my-28">
