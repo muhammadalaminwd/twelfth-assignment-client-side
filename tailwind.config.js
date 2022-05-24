@@ -1,7 +1,11 @@
 module.exports = {
     content: ["./src/**/*.{html,js}"],
     theme: {
-      extend: {},
+      extend: {
+        objectPosition: {
+          'center-bottom': 'center bottom',
+        }
+      },
     },
     daisyui: {
       themes: [

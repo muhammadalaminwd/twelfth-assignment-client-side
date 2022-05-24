@@ -8,6 +8,7 @@ import Blogs from './Blogs/Blogs';
 import Login from './Login/Login';
 import SignUp from './Login/SignUp';
 import RequireAuth from './Login/RequireAuth';
+import NotFound from './NotFound/NotFound';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Route path='/blogs' element={<Blogs />} />
       <Route path='/login' element={<Login />} />
       <Route path='/signup' element={<SignUp />} />
+      <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer></Footer>
     </div>
