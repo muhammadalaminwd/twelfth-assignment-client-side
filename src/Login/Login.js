@@ -38,7 +38,7 @@ const Login = () => {
     return <Loading></Loading>;
   }
   
-  navigate('/purchase')
+  navigate('/')
 
   if (error || gError) {
     signInError = (

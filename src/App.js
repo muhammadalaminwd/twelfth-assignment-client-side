@@ -11,6 +11,7 @@ import RequireAuth from './Login/RequireAuth';
 import NotFound from './NotFound/NotFound';
 import MyPortfolio from './MyPortfolio/MyPortfolio';
 import Dashboard from './Dashboard/Dashboard';
+import BuyDetail from './BuyDetail/BuyDetail';
 
 function App() {
   return (
@@ -20,16 +21,16 @@ function App() {
       <Route path='/' element={<Home />} />
 
       <Route path='/purchase' element={<RequireAuth><Purchase /></RequireAuth>} />
+      <Route path='/parts/:id' element={<RequireAuth><BuyDetail /></RequireAuth>} />
 
+      
       <Route path='/blogs' element={<Blogs />} />
       <Route path='/portfolio' element={<MyPortfolio />} />
       <Route path='/login' element={<Login />} />
       <Route path='/signup' element={<SignUp />} />
-      <Route path='*' element={<NotFound />} />
+      <Route path='/dashboard' element={<Dashboard></Dashboard>} />
 
-      <Route path='/dashboard' element={<Dashboard></Dashboard>}>
-      
-      </Route>
+      <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer></Footer>
     </div>
