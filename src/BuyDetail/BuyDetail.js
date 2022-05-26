@@ -14,7 +14,7 @@ const BuyDetail = () => {
     const [user] = useAuthState(auth);
     // console.log(user);
     // const {_id,name} = services;
-    const { _id, name, price, description, img, minimumQuantity, availableProduct } = services;
+    const { _id, name, price, description, img, minimumOrderQuantity, availableQuantity } = services;
 
     useEffect(() => {
         const url = `https://enigmatic-sierra-69090.herokuapp.com/parts/${Id}`;
@@ -85,7 +85,7 @@ const BuyDetail = () => {
                         <input type="text" name='adress' placeholder='Adress' required className="input input-bordered w-full max-w-xs" />
                         <input type="text" name='price' value={price} disabled className="input input-bordered w-full max-w-xs" />
                         minimum Quantity
-                        <input type="number" value={minimumQuantity} name='minimums' className="input input-bordered w-full max-w-xs" />
+                        <input type="number" value={minimumOrderQuantity} name='minimums' className="input input-bordered w-full max-w-xs" />
                         Order Quantity
                         <input type="number"  name='order' className="input input-bordered w-full max-w-xs" />
                         <h5 className='text-red-500'>{error}</h5>

@@ -33,16 +33,14 @@ const Navbar = () => {
         <Link to="/portfolio">My Portfolio</Link>
       </li>
       <li>
-        <Link to="/about">About</Link>
+        <Link to="/profile">My Profile</Link>
       </li>
       {
         user && <li>
         <Link to="/dashboard">Dashboard</Link>
         <ul>
         <li Link to="/myorder">My order</li>
-        <li Link to="/addreview">Add review</li>
-        <li Link to="/myprofile">My Profile</li>
-        
+        <li Link to="/addreview">Add review</li>        
         </ul>
       </li>
       }

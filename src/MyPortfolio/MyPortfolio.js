@@ -22,7 +22,6 @@ const MyPortfolio = () => {
             <a className='font-bold underline underline-offset-1' href="https://tenth-assignment-3267e.web.app/" target="_blank">Project 1</a> <br />
             <a className='font-bold underline underline-offset-1' href="https://eleventh-assignment-5c5bd.web.app/" target="_blank">Project 2</a> <br />
             <a className='font-bold underline underline-offset-1' href="https://ninth-assignment.netlify.app/" target="_blank">Project 3</a>
-            
         </div>
     );
 };
