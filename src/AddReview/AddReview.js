@@ -39,7 +39,7 @@ const AddReview = () => {
   }, []);
 
   return (
-    <div className="review">
+    <div className="m-8">
       <form onSubmit={handleSubmit(onSubmit)}>
         <label for="name">Name</label>
         <input

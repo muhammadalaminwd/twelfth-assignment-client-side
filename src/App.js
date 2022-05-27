@@ -14,6 +14,7 @@ import Dashboard from './Dashboard/Dashboard';
 import BuyDetail from './BuyDetail/BuyDetail';
 import MyProfile from './MyProfile/MyProfile';
 import AddReview from './AddReview/AddReview';
+import Admin from './Admin/Admin';
 import { createContext, useEffect, useState } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import auth from './firebase.init';
@@ -51,6 +52,7 @@ function App() {
     <Navbar></Navbar>
       <Routes>
       <Route path='/' element={<Home />} />
+      <Route path='/admin' element={<Admin />} />
       <Route path='/purchase' element={<RequireAuth><Purchase /></RequireAuth>} />
       <Route path='/parts/:id' element={<RequireAuth><BuyDetail /></RequireAuth>} />
       <Route path='/blogs' element={<Blogs />} />
