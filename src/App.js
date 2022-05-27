@@ -14,7 +14,6 @@ import Dashboard from './Dashboard/Dashboard';
 import BuyDetail from './BuyDetail/BuyDetail';
 import MyProfile from './MyProfile/MyProfile';
 import AddReview from './AddReview/AddReview';
-import "bootstrap/dist/css/bootstrap.min.css";
 import { createContext, useEffect, useState } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import auth from './firebase.init';
@@ -27,6 +26,13 @@ function App() {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
+        fetch(`https://enigmatic-sierra-69090.herokuapp.com/user/${user?.email}`, {
+        method: 'PUT',
+        body: JSON.stringify(user),
+        headers: { 'Content-Type': 'application/json' }
+    })
+        .then(res => res.json())
+        .then(data => console.log(data))
         setUser({
           email: user?.email,
           name: user?.displayName,
