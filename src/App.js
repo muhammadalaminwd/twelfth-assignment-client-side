@@ -13,19 +13,42 @@ import MyPortfolio from './MyPortfolio/MyPortfolio';
 import Dashboard from './Dashboard/Dashboard';
 import BuyDetail from './BuyDetail/BuyDetail';
 import MyProfile from './MyProfile/MyProfile';
+import AddReview from './AddReview/AddReview';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { createContext, useEffect, useState } from 'react';
+import { onAuthStateChanged } from 'firebase/auth';
+import auth from './firebase.init';
+
+export const UserDataProvider = createContext();
 
 function App() {
+  const [user, setUser] = useState({});
+  // console.log(user);
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser({
+          email: user?.email,
+          name: user?.displayName,
+        });
+
+        // console.log(user);
+      } else {
+        setUser({});
+      }
+    });
+    return () => unsubscribe;
+  }, []);
+
   return (
-    <div>
+    <UserDataProvider.Provider value={[user, setUser]}>
     <Navbar></Navbar>
       <Routes>
       <Route path='/' element={<Home />} />
-
       <Route path='/purchase' element={<RequireAuth><Purchase /></RequireAuth>} />
       <Route path='/parts/:id' element={<RequireAuth><BuyDetail /></RequireAuth>} />
-
-      
       <Route path='/blogs' element={<Blogs />} />
+      <Route path='/addreview' element={<AddReview />} />
       <Route path='/portfolio' element={<MyPortfolio />} />
       <Route path='/profile' element={<MyProfile />} />
       <Route path='/login' element={<Login />} />
@@ -35,7 +58,7 @@ function App() {
       <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer></Footer>
-    </div>
+      </UserDataProvider.Provider>
   );
 }
 
