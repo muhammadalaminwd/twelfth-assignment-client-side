@@ -6,8 +6,8 @@ import auth from '../firebase.init';
 
 const BuyDetail = () => {
     
-    const { Id } = useParams();
-    console.log(Id);
+    const { id } = useParams();
+    console.log(id);
     const [services, setServices] = useState({});
     const { register, handleSubmit } = useForm();
     const onSubmit = data => console.log(data);
@@ -17,16 +17,13 @@ const BuyDetail = () => {
     const { _id, name, price, description, img, minimumOrderQuantity, availableQuantity } = services;
 
     useEffect(() => {
-        const url = `https://enigmatic-sierra-69090.herokuapp.com/parts/${Id}`;
+        const url = `https://enigmatic-sierra-69090.herokuapp.com/parts/${id}`;
         fetch(url)
             .then(res => res.json()).then(data => {
                 setServices(data);
             })
-    }, [Id, setServices]);
+    }, [id]);
 
-
-
-    
     const [error, setError ] = useState('');
   
     const handleBuy = e => {
@@ -69,8 +66,6 @@ const BuyDetail = () => {
         
     }
     
-
-
     return (
         <div className='mt-20'>
             <div class="card w-96 bg-base-100 shadow-xl m-auto">
@@ -79,7 +74,7 @@ const BuyDetail = () => {
                 <div class="card-body ">
                 <form onSubmit={handleBuy} className='grid grid-cols-1 gap-4 justify-items-center'>
                         <h3 className="font-bold text-lg text-center text-secondary">Booking for : {name}</h3>
-                        <input type="text" value={name} disabled  className="input input-bordered w-full max-w-xs" />
+                        <input type="text" value={description} disabled  className="input input-bordered w-full max-w-xs" />
                         <input type="number" placeholder='Phone Number' required   className="input input-bordered w-full max-w-xs" />
                         <input type="email"  name='email' disabled value={user?.email} className="input input-bordered w-full max-w-xs" />
                         <input type="text" name='adress' placeholder='Adress' required className="input input-bordered w-full max-w-xs" />
